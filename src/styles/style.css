@@ -104,6 +104,7 @@ main {
   left: 20px;
   user-select: none;
   pointer-events: none;
+  transition: 150ms all ease-out;
 }
 
 .search-form .form-group input:focus-visible ~ label,
