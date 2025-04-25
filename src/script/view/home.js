@@ -22,6 +22,7 @@ const home = () => {
     event.preventDefault();
 
     const query = event.target.elements.name.value;
+    console.log(query);
     showSportClub(query);
   }
 
@@ -45,6 +46,7 @@ const home = () => {
         </div>
       `;
     });
+    console.log(clubItems);
 
     listElement.innerHTML = clubItems.join('');
   };
