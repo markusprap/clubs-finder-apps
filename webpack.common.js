@@ -1,11 +1,11 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-module.exports = {
-  entry: path.join(__dirname, 'src/app.js'),
+export default {
+  entry: path.join(process.cwd(), 'src/app.js'),
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(process.cwd(), 'dist'),
     filename: 'bundle.js',
   },
   module: {
@@ -14,19 +14,19 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-      // aturan loader lain bisa ditambahkan di sini
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'index.html'),
+      template: path.join(process.cwd(), 'index.html'),
       filename: 'index.html',
     }),
+
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.join(__dirname, 'src/public'),
-          to: path.join(__dirname, 'dist'),
+          from: path.join(process.cwd(), 'src/public'),
+          to: path.join(process.cwd(), 'dist'),
         },
       ],
     }),
