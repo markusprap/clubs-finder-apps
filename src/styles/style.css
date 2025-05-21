@@ -60,10 +60,18 @@ main {
 }
 
 /* Search bar */
+.search-bar-container {
+  display: inline;
+}
+
 .floating-form {
   background-color: white;
   padding: 16px;
   border-radius: 5px;
+
+  position: sticky;
+  top: 10px;
+
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -74,18 +82,22 @@ main {
 
 .search-form .form-group {
   flex-grow: 1;
+
   position: relative;
 }
 
 .search-form .form-group input {
   display: block;
+
   width: 100%;
   height: 60px;
+
   padding: 14px 10px 0 10px;
   border-inline: none;
   border-block-start: none;
   border-block-end: 1px solid cornflowerblue;
-  font-size: 1em;
+
+  font-size: 1rem;
 }
 
 .search-form .form-group input:focus-visible {
@@ -98,19 +110,24 @@ main {
   font-weight: 700;
   text-transform: uppercase;
   color: cornflowerblue;
+
   white-space: nowrap;
+
   position: absolute;
   top: 0;
   left: 20px;
+
   user-select: none;
   pointer-events: none;
-  transition: 150ms all ease-out;
+
+  transition: 150ms all ease-in-out;
 }
 
 .search-form .form-group input:focus-visible ~ label,
 .search-form .form-group input:valid ~ label {
-  top: -16px;
   left: 10px;
+  top: -16px;
+
   font-size: 0.8em;
 }
 
@@ -118,10 +135,13 @@ main {
   border: 0;
   padding-inline: 24px;
   background-color: cornflowerblue;
+
   text-transform: uppercase;
   font-size: 1rem;
   color: white;
+
   cursor: pointer;
+
   transition: 100ms linear;
 }
 
@@ -138,42 +158,18 @@ main {
   margin-block-start: 32px;
 }
 
-/* .club-list .list {
-  overflow: auto;
-}
-
-.club-list .list > * {
-  float: left;
-  width: 49%;
-
-  margin-block-end: 3%;
-}
-
-.club-list .list > *:nth-child(odd) {
-  float: left;
-}
-
-.club-list .list > *:nth-child(even) {
-  margin-inline-start: 2%;
-} */
-
 .club-list .list {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 16px;
 }
 
-.club-list .list .card {
-  padding: 12px;
-}
-
 .club-list .list .card .fan-art-club {
-  width: 50%;
-  max-height: 50%;
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  max-height: 450px;
 
-  /* object-fit: cover; */
+  object-fit: cover;
   object-position: center;
 }
 
